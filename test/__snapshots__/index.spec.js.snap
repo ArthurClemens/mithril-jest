@@ -1,0 +1,8 @@
+exports[`Page component should have a title 1`] = `
+"<div>
+  <h1>
+    Page
+  </h1><a href=\"/home\">Back</a>
+</div>
+"
+`;

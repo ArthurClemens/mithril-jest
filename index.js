@@ -1,0 +1,1 @@
+export { tidy } from "./src/index";
