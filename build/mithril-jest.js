@@ -1,2 +1,2 @@
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports,require("tidy-html5"),require("mithril")):"function"==typeof define&&define.amd?define(["exports","tidy-html5","mithril"],t):t(e.polythene=e.polythene||{},e.tidy_html5,e.m)}(this,function(e,t,i){"use strict";t="default"in t?t.default:t,i="default"in i?i.default:i;var n={"show-body-only":"true",doctype:"omit",indent:!0,quiet:!0,"show-warnings":!1},d=function(e){var d=arguments.length>1&&void 0!==arguments[1]?arguments[1]:n,o=document.createElement("div");i.render(o,e);var r=o.innerHTML;return t.tidy_html5(r,d)};e.tidy=d,Object.defineProperty(e,"__esModule",{value:!0})});
-//# sourceMappingURL=mithril-tidy.js.map
+//# sourceMappingURL=mithril-jest.js.map

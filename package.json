@@ -1,14 +1,14 @@
 {
-  "name": "mithril-tidy",
+  "name": "mithril-jest",
   "version": "0.1.0",
-  "description": "Render Mithril templates to tidy HTML. Useful for testing pages and components with Jest.",
+  "description": "Lets Mithril work with Jest",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ArthurClemens/mithril-tidy.git"
+    "url": "https://github.com/ArthurClemens/mithril-test.git"
   },
-  "main": "build/mithril-tidy.js",
-  "module": "build/mithril-tidy.mjs",
-  "jsnext:main": "build/mithril-tidy.mjs",
+  "main": "build/mithril-jest.js",
+  "module": "build/mithril-jest.mjs",
+  "jsnext:main": "build/mithril-jest.mjs",
   "scripts": {
     "build": "rm -rf build && mkdir build && rollup -c ./scripts/rollup.umd.js && rollup -c ./scripts/rollup.es.js",
     "test": "jest test/*"
@@ -21,6 +21,8 @@
   "author": "Arthur Clemens <arthurclemens@gmail.com> (http://visiblearea.com)",
   "license": "MIT",
   "dependencies": {
+    "jest": "^18.0.0",
+    "jest-cli": "^18.0.0",
     "mithril": "0.2.2-rc.1 - 1.0.0-rc.6 || 1.0.x",
     "tidy-html5": "^0.1.1"
   },
@@ -38,8 +40,6 @@
     "eslint-config-airbnb-base": "^11.0.0",
     "eslint-plugin-import": "^2.2.0",
     "fs-promise": "^1.0.0",
-    "jest": "^18.0.0",
-    "jest-cli": "^18.0.0",
     "rollup": "^0.37.0",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^6.0.0",

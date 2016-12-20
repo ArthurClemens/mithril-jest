@@ -1,34 +1,29 @@
-# mithril-tidy
+# mithril-jest
 
-Render [Mithril](https://github.com/lhorie/mithril.js) templates to tidy HTML. Useful for testing pages and components with [Jest](https://github.com/facebook/jest).
+Lets [Mithril](https://github.com/lhorie/mithril.js) work with [Jest](https://github.com/facebook/jest).
 
 
 ## Rationale
 
 Jest creates textual snapshots of components to make it easy to spot changes. Differences in rendered HTML are printed to the console as diffs, making it easy to accept or reject the new snapshot; see [Jest's snapshot release blog post](http://facebook.github.io/jest/blog/2016/07/27/jest-14.html).
 
-
 <img src="http://arthurclemens.github.io/assets/mithril-tidy/jest-run.png" width="691" height="548" />
 
+`mithril-jest` installs Jest (which installs Jasmine), so you can use the regular functions `describe`, `expect`, `toMatchSnapshot` and so on. To get snapshot-ready HTML from Mithril templates, use function `tidy` (see below).
 
-React's toolchain is fully set up for Jest, but for Mithril two extra steps are needed to create snapshot-ready HTML:
-  1. Render the template to HTML
-  2. Tidy the HTML (multiline, indented)
-
-This utility helps to fill those 2 steps.
 
 
 ## Installation
 
 ```
-npm install --save-dev mithril-tidy
+npm install --save-dev mithril-jest
 ```
 
 You may need to install command line library `tidy-html5` too (on a Mac: `brew install tidy-html5`).
 
 
 
-## Setup
+## Tests setup
 
 A typical Jest setup is to have a `spec` file for each page or component - for component `component.js` you'll have test file `component.spec.js`. Jest's convention is to put these test files inside directory `__tests__/`, but there is no specific need to do this; any directory (for example the conventional `test`) will work.
 
@@ -50,14 +45,16 @@ npm test -- --watch
 
 ### tidy
 
-Renders a Mithril template to (tidy) HTML so it can be used to call Jest's `toMatchSnapshot`.
+Renders a Mithril template to (tidy) HTML so it can be used to call Jest's `toMatchSnapshot`. This function:
+  1. Renders a template to HTML
+  2. Formats the HTML so it becomes multi line and indented
 
 
 #### Example
 
 ```javascript
 import m from "mithril";
-import { tidy } from "mithril-tidy";
+import { tidy } from "mithril-jest";
 
 const page = {
   view: () =>
