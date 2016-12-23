@@ -9,9 +9,7 @@ if (!pkg) {
   throw("Could not read package.json");
 }
 
-const dependencies = Object.keys(pkg.dependencies || {});
-const devDependencies = Object.keys(pkg.devDependencies || {});
-const external = dependencies.concat(devDependencies);
+const external = Object.keys(pkg.dependencies || {});
 
 const globals = {};
 external.forEach(ext => {
