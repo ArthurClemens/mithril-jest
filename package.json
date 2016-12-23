@@ -1,6 +1,6 @@
 {
   "name": "mithril-jest",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Lets Mithril work with Jest",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   "module": "build/mithril-jest.mjs",
   "jsnext:main": "build/mithril-jest.mjs",
   "scripts": {
-    "build": "rm -rf build && mkdir build && rollup -c ./scripts/rollup.umd.js && rollup -c ./scripts/rollup.es.js",
+    "build": "npm test && rm -rf build && mkdir build && rollup -c ./scripts/rollup.umd.js && rollup -c ./scripts/rollup.es.js",
     "test": "jest test/**"
   },
   "keywords": [
@@ -20,12 +20,6 @@
   ],
   "author": "Arthur Clemens <arthurclemens@gmail.com> (http://visiblearea.com)",
   "license": "MIT",
-  "dependencies": {
-    "jest": "^18.0.0",
-    "jest-cli": "^18.0.0",
-    "mithril": "1.0.0-rc.6 || 1.0.x",
-    "tidy-html5": "^0.1.1"
-  },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.21.0",
@@ -40,11 +34,15 @@
     "eslint-config-airbnb-base": "^11.0.0",
     "eslint-plugin-import": "^2.2.0",
     "fs-promise": "^1.0.0",
+    "jest": "^18.0.0",
+    "jest-cli": "^18.0.0",
+    "mithril": "1.0.0-rc.6 || 1.0.x",
     "rollup": "^0.38.0",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^6.0.1",
     "rollup-plugin-eslint": "^3.0.0",
     "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-uglify": "^1.0.1"
+    "rollup-plugin-uglify": "^1.0.1",
+    "tidy-html5": "^0.1.1"
   }
 }
