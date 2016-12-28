@@ -9,7 +9,9 @@ Jest creates textual snapshots of components to make it easy to spot changes. Di
 
 <img src="http://arthurclemens.github.io/assets/mithril-tidy/jest-run.png" width="691" height="548" />
 
-`mithril-jest` installs Jest (which installs Jasmine), so you can use the regular functions `describe`, `expect`, `toMatchSnapshot` and so on. To get snapshot-ready HTML from Mithril templates, use function `tidy` (see below).
+`mithril-jest` installs Jest (which installs Jasmine), so you can use the regular functions `describe`, `expect`, `toMatchSnapshot` and so on.
+
+To get snapshot-ready HTML from Mithril templates, use function `tidy` (see below).
 
 
 
@@ -29,11 +31,17 @@ A typical Jest setup is to have a `spec` file for each page or component - for c
 
 If your tests live in directory `test`, add to `package.json` to the "scripts" entry:
 
-```
-"test": "jest test/*"
+```json
+"test": "jest test/**"
 ```
 
-Then run `npm test`. For interactive mode, run:
+Then run:
+
+```
+npm run test
+```
+
+For interactive mode, run:
 
 ```
 npm test -- --watch
