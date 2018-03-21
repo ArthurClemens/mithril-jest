@@ -1,6 +1,6 @@
 {
   "name": "mithril-jest",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "description": "Lets Mithril work with Jest",
   "repository": {
     "type": "git",
