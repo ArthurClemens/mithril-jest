@@ -8,7 +8,9 @@ export const pkg = JSON.parse(fs.readFileSync("./package.json"));
 if (!pkg) {
   throw("Could not read package.json");
 }
-
+const env = process.env; // eslint-disable-line no-undef
+const input = env.INPUT || "index.js";
+const name = env.NAME || pkg.name;
 const external = Object.keys(pkg.dependencies || {});
 
 const globals = {};
@@ -23,16 +25,19 @@ external.forEach(ext => {
 });
 
 export const createConfig = ({ includeDepencies }) => ({
-  entry: "index.js",
-  external: includeDepencies ? null : external,
-  globals,
+  input,
+  external: includeDepencies ? [] : external,
+  output: {
+    name,
+    globals,
+  },
   plugins: [
 
     // Resolve libs in node_modules
     resolve({
       jsnext: true,
       main: true,
-      skip: includeDepencies ? [] : external
+      external: includeDepencies ? [] : external
     }),
 
     // Convert CommonJS modules to ES6, so they can be included in a Rollup bundle

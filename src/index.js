@@ -1,7 +1,7 @@
 import htmltidy from "tidy-html5";
 import m from "mithril";
 
-const defaultHtmlTidyOptions = {
+export const defaultHtmlTidyOptions = {
   "show-body-only": true,
   "drop-empty-elements": false,
   "doctype": "omit",

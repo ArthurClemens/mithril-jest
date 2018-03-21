@@ -1,1 +1,1 @@
-export { tidy } from "./src/index";
+export { tidy, defaultHtmlTidyOptions } from "./src/index";

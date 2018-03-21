@@ -22,4 +22,4 @@ var tidy = function tidy(vnodes) {
   return htmltidy.tidy_html5(html, htmltidyOptions);
 };
 
-export { tidy };
+export { tidy, defaultHtmlTidyOptions };

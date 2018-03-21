@@ -1,18 +1,15 @@
 {
   "presets": [
     [
-      "es2015", {
+      "env", {
         "modules": false
       }
     ]
   ],
-  "plugins": [
-    "external-helpers"
-  ],
   "env": {
     "test": {
       "presets": [
-        "es2015"
+        "env"
       ],
       "plugins": ["transform-runtime"]
     }

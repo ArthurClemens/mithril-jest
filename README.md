@@ -44,7 +44,7 @@ npm run test
 For interactive mode, run:
 
 ```
-npm test -- --watch
+npm test --watch
 ```
 
 
@@ -64,7 +64,7 @@ Renders a Mithril template to (tidy) HTML so it can be used to call Jest's `toMa
 import m from "mithril";
 import { tidy } from "mithril-jest";
 
-const page = {
+const Page = {
   view: () =>
     m("div", [
       m("h1", "Page"),
@@ -76,7 +76,7 @@ const page = {
 
 describe("Page component", () => {
   it("should have a title", () => {
-    const cmp = m(page);
+    const cmp = m(Page);
     const html = tidy(cmp);
     expect(html).toMatchSnapshot();
   });
@@ -90,7 +90,7 @@ The rendered HTML can also be used to inspect:
 ```javascript
 describe("Page component", () => {
   it("title should be h1 with label 'Page'", () => {
-    const cmp = m(page);
+    const cmp = m(Page);
     const html = tidy(cmp);
     expect(html).toContain("Page");
   });
@@ -112,8 +112,8 @@ Argument                  | Type                      | Required | Description
 
 ### Dependencies
 
-* [Mithril](https://github.com/lhorie/mithril.js)
-* [Jest](https://github.com/facebook/jest)
+* [Mithril](https://mithril.js.org)
+* [Jest](https://facebook.github.io/jest/)
 * [tidy-html5](https://github.com/htacg/tidy-html5)
 
 
