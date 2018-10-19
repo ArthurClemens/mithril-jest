@@ -1,6 +1,6 @@
 import fs from "fs";
 import babel from "rollup-plugin-babel";
-import eslint from "rollup-plugin-eslint";
+import { eslint } from "rollup-plugin-eslint";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 
@@ -37,7 +37,6 @@ export const createConfig = ({ includeDepencies }) => ({
     resolve({
       jsnext: true,
       main: true,
-      external: includeDepencies ? [] : external
     }),
 
     // Convert CommonJS modules to ES6, so they can be included in a Rollup bundle
@@ -49,7 +48,9 @@ export const createConfig = ({ includeDepencies }) => ({
       cache: true
     }),
 
-    babel()
+    babel({
+      exclude: "node_modules/**"
+    })
   ]
 });
 
