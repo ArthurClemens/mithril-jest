@@ -11,14 +11,11 @@ if (!pkg) {
 const env = process.env; // eslint-disable-line no-undef
 const input = env.INPUT || "index.js";
 const name = env.NAME || pkg.name;
-const external = Object.keys(pkg.dependencies || {});
+const external = Object.keys(pkg.dependencies || {}).concat(Object.keys(pkg.peerDependencies || {}));
 
 const globals = {};
 external.forEach(ext => {
   switch (ext) {
-  case "mithril":
-    globals["mithril"] = "m";
-    break;
   default:
     globals[ext] = ext;
   }
